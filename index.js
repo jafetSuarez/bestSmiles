@@ -73,20 +73,17 @@
         // Find the most probable word.
         scores.sort((s1, s2) => s2.score - s1.score);
 
-        let x = "";
         switch (scores[0].word) {
           case "one":
-            x = "1️⃣";
+            document.querySelector("#counter").textContent = "1️⃣";
             break;
           case "two":
-            x = "2️⃣";
+            document.querySelector("#counter").textContent = "2️⃣";
             break;
           case "three":
-            x = "😁";
+            document.querySelector("#counter").textContent = "😁";
             takepicture();
             break;
-          default:
-            document.querySelector("#counter").textContent = x;
         }
       },
       { probabilityThreshold: 0.75 }
