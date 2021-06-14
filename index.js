@@ -4,7 +4,6 @@
     video = document.querySelector("#video"),
     canvas = document.querySelector("#canvas"),
     photo = document.querySelector("#photo"),
-    startbutton = document.querySelector("#startbutton"),
     width = 320,
     height = 0;
 
@@ -57,13 +56,6 @@
     photo.setAttribute("src", data);
   }
 
-  /*
-	startbutton.addEventListener('click', function(ev){
-		takepicture();
-		ev.preventDefault();
-	}, false);
-*/
-
   //https://codelabs.developers.google.com/codelabs/tensorflowjs-audio-codelab/index.html
   //"zero" to "nine", "up", "down", "left", "right", "go", "stop", "yes", "no", as well as the additional categories of "unknown word" and "background noise"
   let recognizer;
@@ -80,28 +72,21 @@
         }));
         // Find the most probable word.
         scores.sort((s1, s2) => s2.score - s1.score);
-        /*
-		document.querySelector("#console").textContent = scores[0].word;
-        if (scores[0].word === "go") {
-			console.log(scores[0].word);
-		}
-	  	*/
+
+        let x = "";
         switch (scores[0].word) {
           case "one":
-            // code block
-            document.querySelector("#counter").textContent = "1️⃣";
+            x = "1️⃣";
             break;
           case "two":
-            // code block
-            document.querySelector("#counter").textContent = "2️⃣";
+            x = "2️⃣";
             break;
           case "three":
-            // code block
-            document.querySelector("#counter").textContent = "😁";
+            x = "😁";
             takepicture();
             break;
-          //default:
-          // code block
+          default:
+            document.querySelector("#counter").textContent = x;
         }
       },
       { probabilityThreshold: 0.75 }
