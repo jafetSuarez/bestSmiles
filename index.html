@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="shortcut icon" href="cam.ico">
+    <title>Best Smiles</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/speech-commands"></script>
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+      .loader {
+        border: 16px solid #f3f3f3; /* Light grey */
+        border-top: 16px solid black; 
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .hide-loader {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bd-example" align="middle" style="margin-top: 20px">
+      <div class="loader" id="loader"></div>
+      <h1 id="title"></h1>
+      <h1 id="counter"></h1>
+      <!-- 
+		  <div id="console"></div>
+		  <button id="startbutton">Take photo</button>
+	   -->
+      <video id="video"></video>
+      <p>Best smiles come after the toughest time.</p>
+      <canvas id="canvas"></canvas>
+    </div>
+    <script src="index.js"></script>
+  </body>
+  <footer>
+    <div class="bd-example" align="middle" style="margin-top: 250px">
+      <hr />
+      <h6>Web page by Jafet Suárez.</h6>
+      <h6>
+        Trained model from
+        <a
+          href="https://codelabs.developers.google.com/codelabs/tensorflowjs-audio-codelab/index.html"
+          >https://codelabs.developers.google.com/codelabs/tensorflowjs-audio-codelab/index.html</a
+        >.
+      </h6>
+    </div>
+  </footer>
+</html>
